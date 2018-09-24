@@ -14,17 +14,18 @@ class MemoTableViewController: UITableViewController {
     let userDefaults = UserDefaults.standard // データ保持用のインスタンス取得
     
     /* メモ変数 */
-//    var memos = ["キャベツ", "トマト", "タマネギ"]
     var memos = [String]()
     
-    /* segueの巻き戻し処理 */
+    /*
+     segueの巻き戻し処理
+     */
     @IBAction func unwindToMemoList(sender: UIStoryboardSegue) {
         /* MemoViewControllerのprepareメソッドによるsegueの巻き戻し処理 */
         // MemoViewControllerから渡ってきた変数memoを取得してリストmemosに追加する
         
         // 遷移元の画面を取得する
-        // → ① 渡ってきた引数senderをMemoViewControllerでキャストし、sourceVCに設定する
-        //   ② リストmemoに①で設定したsourceVCの変数memo(MemoViewController側で入力された値を保持している変数memo)を代入する
+        // 1. 渡ってきた引数senderをMemoViewControllerでキャストし、sourceVCに設定する
+        // 2. リストmemoに1で設定したsourceVCの変数memo(MemoViewController側で入力された値を保持している変数memo)を代入する
         guard let sourceVC = sender.source as? MemoViewController, let memo  = sourceVC.memo else {
             return
         }
@@ -67,9 +68,9 @@ class MemoTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
-
-    /* セクション数を設定する */
+    /*
+     セクション数を設定する
+     */
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         
@@ -78,9 +79,10 @@ class MemoTableViewController: UITableViewController {
 //        return self.memos.count
     }
 
-    /* セクションの行数(要素数)を設定する */
+    /*
+     セクションの行数(要素数)を設定する
+     */
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         
         // メモの要素数だけ返却する
         return self.memos.count
@@ -95,21 +97,8 @@ class MemoTableViewController: UITableViewController {
 
         return cell
     }
-    
-//    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        return sections[section]
-//    }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
 
     // スワイプによる処理
-    // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
@@ -119,22 +108,7 @@ class MemoTableViewController: UITableViewController {
         }   
     }
 
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    // MARK: - Navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // タップされた行のメモを遷移先の画面に渡す処理
         guard let identifier = segue.identifier else {

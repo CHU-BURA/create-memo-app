@@ -106,7 +106,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BPU-gK-EjT" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="iTP-4S-3u2" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3182" y="-189"/>
+            <point key="canvasLocation" x="2762" y="144"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wSn-Xh-Jza">
@@ -124,7 +124,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BK9-Oa-zqX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="740" y="111.99400299850076"/>
+            <point key="canvasLocation" x="1146" y="-212"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lyB-Fn-0YL">
@@ -142,7 +142,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DNV-VY-yBk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2388" y="500"/>
+            <point key="canvasLocation" x="1974" y="536"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
